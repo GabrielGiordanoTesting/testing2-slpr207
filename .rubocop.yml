@@ -1,7 +1,5 @@
-inherit_from:
-  - .rubocop_todo.yml
-
 AllCops:
+  DisabledByDefault: true
   TargetRubyVersion: 2.3
   Exclude:
     - tmp/**/*
@@ -10,134 +8,54 @@ AllCops:
 
 # Lint
 
-# They are idiomatic
-Lint/AssignmentInCondition:
-  Enabled: false
-
-Lint/UnusedMethodArgument:
-  Enabled: false
-
 Lint/ScriptPermission:
+  Enabled: true
   Exclude:
     - 'lib/bundler/templates/Executable'
 
 # Layout
 
-Layout/AccessModifierIndentation:
-  EnforcedStyle: outdent
-
 Layout/AlignParameters:
+  Enabled: true
   EnforcedStyle: with_fixed_indentation
 
-Layout/EndAlignment:
-  EnforcedStyleAlignWith: variable
-  AutoCorrect: true
-
 Layout/MultilineOperationIndentation:
+  Enabled: true
   EnforcedStyle: indented
 
 Layout/SpaceInsideBlockBraces:
+  Enabled: true
   SpaceBeforeBlockParameters: false
 
 Layout/DotPosition:
+  Enabled: true
   EnforcedStyle: trailing
 
 # Style
 
 Style/Alias:
+  Enabled: true
   EnforcedStyle: prefer_alias_method
 
 Style/FrozenStringLiteralComment:
+  Enabled: true
   EnforcedStyle: always
-
-Style/MultilineBlockChain:
-  Enabled: false
-
-Style/PerlBackrefs:
-  Enabled: false
-
-Style/SingleLineBlockParams:
-  Enabled: false
-
-Style/TrivialAccessors:
-  Enabled: false
 
 # We adopted raise instead of fail.
 Style/SignalException:
+  Enabled: true
   EnforcedStyle: only_raise
 
 Style/StringLiterals:
+  Enabled: true
   EnforcedStyle: double_quotes
 
 Style/StringLiteralsInInterpolation:
+  Enabled: true
   EnforcedStyle: double_quotes
-
-# Having these make it easier to *not* forget to add one when adding a new
-# value and you can simply copy the previous line.
-Style/TrailingCommaInArrayLiteral:
-  EnforcedStyleForMultiline: comma
-
-Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
-
-Style/TrailingUnderscoreVariable:
-  Enabled: false
-
-# `String.new` is preferred style with enabled frozen string literal
-Style/EmptyLiteral:
-  Enabled: false
 
 # 1.8.7 support
 
 Style/HashSyntax:
+  Enabled: true
   EnforcedStyle: hash_rockets
-
-Style/Lambda:
-  Enabled: false
-
-Style/EachWithObject:
-  Enabled: false
-
-Style/SpecialGlobalVars:
-  Enabled: false
-
-Style/TrailingCommaInArguments:
-  Enabled: false
-
-Performance/FlatMap:
-  Enabled: false
-
-Security/YAMLLoad:
-  Enabled: false
-
-# Metrics
-
-# We've chosen to use Rubocop only for style, and not for complexity or quality checks.
-Metrics/ClassLength:
-  Enabled: false
-
-Metrics/ModuleLength:
-  Enabled: false
-
-Metrics/MethodLength:
-  Enabled: false
-
-Metrics/BlockNesting:
-  Enabled: false
-
-Metrics/AbcSize:
-  Enabled: false
-
-Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Metrics/ParameterLists:
-  Enabled: false
-
-Metrics/BlockLength:
-  Enabled: false
-
-# It will be obvious which code is complex, Rubocop should only lint simple
-# rules for us.
-Metrics/PerceivedComplexity:
-  Enabled: false
