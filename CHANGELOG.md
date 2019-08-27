@@ -21,7 +21,7 @@ on minimizing (hopefully eliminating) this, such as
 [#7193](https://github.com/bundler/bundler/pull/7193),
 [#7216](https://github.com/bundler/bundler/pull/7216),
 [#7274](https://github.com/bundler/bundler/pull/7274)
-
+asdfasdf
 Deprecations:
 
   * See the [the upgrading document](UPGRADING.md) for a detailed explanation of
